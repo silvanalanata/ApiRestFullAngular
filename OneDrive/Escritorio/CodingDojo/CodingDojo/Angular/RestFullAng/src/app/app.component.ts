@@ -13,6 +13,7 @@ export class AppComponent implements OnInit{
   var1: boolean = false;
   vardetalle: boolean = false;
   newId: any;
+ // var_id_padre: any;
 
 
   constructor(private datosService: DatosService) {
