@@ -1,0 +1,13 @@
+<div *ngIf="datos!=null; else espera">
+  <table border="1">
+    <tr>
+      <td>Title</td><td>Description</td><td>Completed</td>
+    </tr>
+    <tr *ngFor="let art of datos">
+      <td>{{art.title}}</td>
+      <td>{{art.description}}</td>
+      <td>{{art.completed}}</td>
+    </tr>
+  </table>
+</div>
+<ng-template #espera>Esperando datos...</ng-template>
