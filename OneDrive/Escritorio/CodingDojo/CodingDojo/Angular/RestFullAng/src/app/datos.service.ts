@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,12 +13,12 @@ export class DatosService {
    }
 
   retornar() {
-    return this.http.get("http://localhost:8000/getAll");
+    return this.http.get(environment.servicesURLGetAll);
   }
 
   retornarId() {
 
-    let tempObservable = this.http.get("http://localhost:8000/getId/636ea5a6af3d3d1f02f614fc");
+    let tempObservable = this.http.get(environment.servicesURLGetId);
     tempObservable.subscribe(data => console.log("Tarea para buscar 1 reg", data));
 
   }
