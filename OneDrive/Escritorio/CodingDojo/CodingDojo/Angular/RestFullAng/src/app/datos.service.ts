@@ -9,7 +9,7 @@ export class DatosService {
 
 
   constructor(private http: HttpClient) {
-    this.retornarId()
+   // this.retornarId()
    }
 
   retornar() {
@@ -18,8 +18,9 @@ export class DatosService {
 
   retornarId() {
 
-    let tempObservable = this.http.get(environment.servicesURLGetId);
-    tempObservable.subscribe(data => console.log("Tarea para buscar 1 reg", data));
+    //let tempObservable = this.http.get(environment.servicesURLGetId);
+    //tempObservable.subscribe(data => console.log("Tarea para buscar 1 reg", data));
+   return this.http.get(environment.servicesURLGetId)
 
   }
 

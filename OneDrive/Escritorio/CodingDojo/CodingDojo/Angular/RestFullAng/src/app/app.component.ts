@@ -9,11 +9,36 @@ import  { DatosService } from './datos.service';
 export class AppComponent implements OnInit{
 
   datos: any;
+  datosid: any = {};
 
-  constructor(private datosService: DatosService) {}
+
+  constructor(private datosService: DatosService) {
+
+  }
 
   ngOnInit() {
-    this.datosService.retornar()
-      .subscribe( result =>  this.datos = result)
+    this.getretornar()
+    this.getretornarId()
+
   }
+  getretornar(){
+    this.datosService.retornar()
+    .subscribe( result =>  this.datos = result)
+
+  }
+
+ getretornarId(){
+ // this.getretornarId()
+  let tempObservable = this.datosService.retornarId()
+ //tempObservable.subscribe( result => console.log("Tarea para buscar 1 reg", result));
+ tempObservable.subscribe( result => this.datosid = result);
+
+ }
+
+// mostrarTodos(): void {
+// this.getretornar();
+//}
+
+
+
 }

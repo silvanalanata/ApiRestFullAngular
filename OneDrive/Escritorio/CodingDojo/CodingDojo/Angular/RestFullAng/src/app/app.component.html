@@ -1,4 +1,7 @@
-<div *ngIf="datos!=null; else espera">
+<h1> Restful Task Api:</h1>
+
+<!-- <button (click)="mostrarTodos()">Click me!</button> -->
+
   <table border="1">
     <tr>
       <td>Title</td><td>Description</td><td>Completed</td>
@@ -7,7 +10,21 @@
       <td>{{art.title}}</td>
       <td>{{art.description}}</td>
       <td>{{art.completed}}</td>
+      <td><a href=""> ver mas </a></td>
+
     </tr>
   </table>
-</div>
-<ng-template #espera>Esperando datos...</ng-template>
+
+<h1> datos del primer registro:  </h1>
+  <table border="1">
+    <tr>
+      <td>Title</td><td>Description</td><td>Completed</td>
+    </tr>
+      <td>{{datosid.title}}</td>
+      <td>{{datosid.description}}</td>
+      <td>{{datosid.completed}}</td>
+
+  </table>
+
+
+
