@@ -10,6 +10,9 @@ export class AppComponent implements OnInit{
 
   datos: any;
   datosid: any = {};
+  var1: boolean = false;
+  vardetalle: boolean = false;
+  newId: any;
 
 
   constructor(private datosService: DatosService) {
@@ -17,28 +20,35 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.getretornar()
-    this.getretornarId()
+ //   this.getretornar()
+  //  this.getretornarId()
+  this.newId = {_id: ""}
 
   }
   getretornar(){
     this.datosService.retornar()
     .subscribe( result =>  this.datos = result)
+    this.vardetalle = false;
 
   }
 
- getretornarId(){
- // this.getretornarId()
-  let tempObservable = this.datosService.retornarId()
- //tempObservable.subscribe( result => console.log("Tarea para buscar 1 reg", result));
+ getretornarId(id: String){ //recibe el id
+
+  let tempObservable = this.datosService.retornarId(id)
  tempObservable.subscribe( result => this.datosid = result);
+ this.vardetalle= true;
 
  }
 
-// mostrarTodos(): void {
-// this.getretornar();
-//}
+ mostrarTodos(): void {
+ this.getretornar();
+ this.var1=true;
+}
 
+
+onSubmit(){
+  this.newId = {_id: ""}
+}
 
 
 }

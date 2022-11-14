@@ -16,12 +16,12 @@ export class DatosService {
     return this.http.get(environment.servicesURLGetAll);
   }
 
-  retornarId() {
+  retornarId(id: String) {
+    let url= `${environment.servicesURLGetId}/${id}`;
 
-    //let tempObservable = this.http.get(environment.servicesURLGetId);
-    //tempObservable.subscribe(data => console.log("Tarea para buscar 1 reg", data));
-   return this.http.get(environment.servicesURLGetId)
+   return this.http.get(url)
 
   }
+
 
 }

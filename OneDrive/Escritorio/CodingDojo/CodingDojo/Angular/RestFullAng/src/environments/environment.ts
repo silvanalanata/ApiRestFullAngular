@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   servicesURLGetAll : "http://localhost:8000/getAll",
-  servicesURLGetId : "http://localhost:8000/getId/636ea5a6af3d3d1f02f614fc"
+  servicesURLGetId : "http://localhost:8000/getId"
 };
 
 /*

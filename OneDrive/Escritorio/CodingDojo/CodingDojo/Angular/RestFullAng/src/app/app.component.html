@@ -1,8 +1,9 @@
 <h1> Restful Task Api:</h1>
 
-<!-- <button (click)="mostrarTodos()">Click me!</button> -->
+ <button (click)="mostrarTodos()">Mostrar Lista</button>
 
-  <table border="1">
+
+  <table border="1" *ngIf="var1">
     <tr>
       <td>Title</td><td>Description</td><td>Completed</td>
     </tr>
@@ -10,12 +11,11 @@
       <td>{{art.title}}</td>
       <td>{{art.description}}</td>
       <td>{{art.completed}}</td>
-      <td><a href=""> ver mas </a></td>
-
+      <td><button (click)="getretornarId(art._id)"> ver detalle </button></td>
     </tr>
   </table>
-
-<h1> datos del primer registro:  </h1>
+<div *ngIf="vardetalle">
+<h1> Datos ID: {{datosid.title}} </h1>
   <table border="1">
     <tr>
       <td>Title</td><td>Description</td><td>Completed</td>
@@ -26,5 +26,16 @@
 
   </table>
 
+</div>
+<div>
+  <h2>buscar por id: </h2>
+  <form (submit)="getretornarId(newId._id)">
+        <!-- usa el pipeline JSON para ver cómo newTask cambia en tiempo real -->
+        <p> {{ newId | json }} </p>
+        <input type="text" name="title" [(ngModel)]= "newId._id" />
+        <input type="submit" value="Create Task" />
+    </form>
 
+
+</div>
 
